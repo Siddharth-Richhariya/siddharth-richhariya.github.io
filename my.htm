@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <center>
+        <h1>
+            "Password Genrator"
+        </h1>
+        <label id="result"></label>
+        <table>
+            <tr>
+                <td>
+            <label for="length"> Password Length</label>
+                </td>
+                <td>
+            <select id="length">
+                <option value="8">8</option>
+                <option value="16">16</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+                <option value="256">256</option>
+             </select>
+             </td>
+             </tr>
+             <tr>
+                 <td>
+                     <label for="symbols">Include Symbol:</label>
+                 </td>
+                 <td> 
+                 <input type="checkbox" id="symbols">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                    <label for="numbers">Include Numbers</label>
+                 </td>
+                 <td>
+                     <input type="checkbox" id="numbers">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <label for="lower-case"> Include Lower-case Character</label>
+                 </td>
+                 <td>
+                     <input type="checkbox" id="lower-case">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                 <label for="upper-case">include Upper-Case Character</label>
+                 </td>
+                 <td>
+                     <input type="checkbox" id="upper-case">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <button id="generate-button" onclick="genPass()">Genrate Password</button>
+                 </td>
+                 <td>
+                     <button id="Clear-button" onclick="clr()">Clear</button>
+                 </td>
+             </tr>
+        </table>
+    </center>
+    </body>
+
+
+<script>
+
+function genPass() {
+    var str = "";
+    var pass = "";
+    var passLength = document.getElementById('length').value;
+    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lower = "abcdefghijklmnopqrstuvwxyz";
+    var num = "0123456789";
+    var symbl = "!@#$%^&*_?";
+    var checkSymbl = document.getElementById('symbols').checked;
+    var checkUpper = document.getElementById('upper-case').checked;
+    var checkLower = document.getElementById('lower-case').checked;
+    var checkNum = document.getElementById('numbers').checked;
+    
+    if (checkSymbl) {
+        str += symbl;
+        }
+      
+    if (checkNum) {
+        str += num;
+    }
+       if (checkLower) {
+        str += lower;
+    }
+    
+    if (checkUpper) {
+        str += upper;
+    }
+    
+    
+
+    for (var i = 0; i <= passLength; i++) {
+        var r = Math.floor(Math.random() * str.length);
+        pass += str.substring(r, r+1);
+    }
+    document.getElementById('result').innerHTML=pass;
+    
+    if (checkSymbl === false && checkUpper === false && checkLower === false && checkNum === false) {
+        document.getElementById('result').innerHTML="!please select at least one checkbox";
+    }
+}
+function clr() {
+    document.getElementById('result').innerHTML="";
+    document.getElementById('length').value = 8;
+    document.getElementById('symbols').checked=false;
+    document.getElementById('numbers').checked=false;
+    document.getElementById('lower-case').checked=false;
+    document.getElementById('upper-case').checked=false;   
+}
+</script>
+
+</html>

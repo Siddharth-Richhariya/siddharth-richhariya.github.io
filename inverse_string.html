@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function Takestring(){
+        // alert("great")
+        let var1= document.getElementById("str").value;
+        var var2=var1.length;
+        let var3=var1.sort;
+        // document.write(var1)=demo; for next page 
+        document.getElementById("demo").innerHTML =var2;
+        document.getElementById("demo1").innerHTML =var3;
+
+    }
+</script>
+
+<body>
+    <h2>Sorting a string</h2>
+    <input type="text" id="str">
+    <button onclick="Takestring()">click</button>
+    <h1>Length: </h1><h2 id="demo" ></h2>
+    <h1>Sort: </h1><h2 id="demo1" ></h2>
+</body>
+</html>

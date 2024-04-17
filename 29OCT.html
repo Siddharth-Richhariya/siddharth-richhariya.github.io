@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .div1 {
+            width: 80%;
+            background-color: lightblue;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 25px auto;
+        }
+        .cal {
+            width: 175px;
+            background-color: lightcoral;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 25px 25px;
+        }
+        .bt{
+            width: 40px;
+        }
+        #zeno {
+            margin-left: 141.5px;
+            padding: 10px;
+            margin-top: 10px;
+            color: coral;
+            background-color: cornflowerblue;
+            border-radius: 10px;
+            font-family: cursive;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h2>1. Sort the letters in Alphabetical order.</h2>
+        <label for="str">Enter the String here: </label>
+        <input style="border-radius: 10px;" type="text" id="str"><br>
+        <button id="zeno" type="submit" onclick="Rearrange()">Submit</button>
+        <p>String in Alphabetical Order: <span id="sp"></span></p>
+    </div>
+
+    <div class="div1">
+        <h2>2. Simple Calculator</h2>
+        <div class="cal">
+            <input type="text" id="o">
+            <table>
+                <tr>
+                    <td><button class="bt" onclick="inputno(1)">1</button></td>
+                    <td><button class="bt" onclick="inputno(2)">2</button></td>
+                    <td><button class="bt" onclick="inputno(3)">3</button></td>
+                    <td><button class="bt" onclick="inputno('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="bt" onclick="inputno(4)">4</button></td>
+                    <td><button class="bt" onclick="inputno(5)">5</button></td>
+                    <td><button class="bt" onclick="inputno(6)">6</button></td>
+                    <td><button class="bt" onclick="inputno('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="bt" onclick="inputno(7)">7</button></td>
+                    <td><button class="bt" onclick="inputno(8)">8</button></td>
+                    <td><button class="bt" onclick="inputno(9)">9</button></td>
+                    <td><button class="bt" onclick="inputno('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button class="bt" onclick="clr()">Clr</button></td>
+                    <td><button class="bt" onclick="inputno(0)">0</button></td>
+                    <td><button class="bt" onclick="ans()">=</button></td>
+                    <td><button class="bt" onclick="inputno('/')">/</button></td>
+                </tr>
+            </table>
+            <span id = "ll"></span>
+        </div>
+    </div>
+
+    <div class="div1">
+        <h2>3. Convert first letter of each word to Uppercase.</h2>
+        <label for="str1">Enter the String here: </label>
+        <input type="text" id="str1">
+        <button type="submit" onclick="uprcase()">Submit</button>
+        <p>Output: <span id="sp1"></span></p>
+    </div>
+
+    <div class="div1">
+        <h2>4. Find the first non-repeated character.</h2>
+        <label for="str2">Enter the String here: </label>
+        <input type="text" id="str2">
+        <button type="submit" onclick="frst()">Submit</button>
+        <p>Output: <span id="sp2"></span></p>
+    </div>
+    <div class="div1">
+        <form>
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <lebel for="lname">Last namr</lebel><br>
+            <input type="text" id="lname" name="lname"><br>
+            <input type="submit" onclick="alert('hello world')" name="submit">
+        </form>
+    </div>
+    
+
+    
+
+    <script>
+        function myfunction() {
+                document.getElementById("demo").innerHTML="hello brother!";
+                
+
+            }
+        function Rearrange(){
+            var a = document.getElementById('str').value;
+            var b = a.split("").sort().toString().replace(/,/g,'');
+            document.getElementById('sp').innerHTML = "<b>" + b + "</b>";
+        }
+
+        function inputno(x){
+            var xx = x;
+            var y = document.getElementById('o').value;
+            var z = y+xx;
+            document.getElementById('o').value = z;
+        }
+
+        function ans(){
+            var d = document.getElementById('o').value;
+            var e = eval(d);
+            document.getElementById('o').value = e;
+        }
+
+        function clr(){
+            document.getElementById('o').value = "";
+        }
+
+        function uprcase(){
+            var f = document.getElementById('str1').value;
+            var g = f.split(" ");
+            for(var i = 0;i<g.length;i++){
+                g[i] = g[i][0].toUpperCase() + g[i].slice(1);
+            }
+            var h = g.toString().replace(/,/g,' ');
+            document.getElementById('sp1').innerHTML = h;
+        }
+
+        function frst(){
+            var j = document.getElementById('str2').value;
+            var k = j.split('');
+            var cnt = 0;
+            var res = 0;
+            for(var i = 0; i < k.length; i++){
+                cnt = 0;
+                for(var x =0;x<k.length;x++){
+                    if(k[i] === k[x]){
+                        cnt+=1;
+                    }
+                }
+                if(cnt<2){
+                    res = k[i];
+                    break;
+                }
+            }
+            document.getElementById('sp2').innerHTML = res;
+        }
+    </script>
+</body>
+</html>

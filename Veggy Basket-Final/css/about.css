@@ -1,0 +1,72 @@
+.about{
+    width: 80%;
+    margin: 0px auto;
+    font-size: 15px;
+}
+
+.ooo{
+    margin: 100px 0 20px 0;
+    margin-left: 50%;
+}
+
+.pppp{
+    margin: 80px 0 20px 0;
+}
+
+.sdsd{
+    display: flex;
+}
+
+.plant{
+    padding: 0 30px;
+}
+
+.plant img{
+    border-radius: 10px;
+}
+
+#imgg1{
+margin-top:280px ;
+}
+
+.plant blockquote{
+    font-size: 2em;
+    width: 30%;
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.plant blockquote span{
+    width: 100%;
+    background: rgb(61, 105, 126);
+    display: block;
+    height: 5px;
+    margin-top: 10px;
+}
+
+#text{
+    background-color: #b3e5b3;
+    padding: 10px 40px;
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+#text p{
+    padding: 5px;
+}
+
+#names{
+    margin-top: 40px;
+    font-size: 25px;
+    text-align: center;
+}
+#names ul{
+    display: flex;
+}
+
+#names ul li{
+    display: block;
+    width:16.67%
+}
